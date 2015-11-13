@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Transportadora extends Model
 {
-    //
+    protected $fillable = ['nome_fantasia','razao_social','cnpj'];
 }

@@ -14,7 +14,9 @@ class CreateTransportadorasTable extends Migration
     {
         Schema::create('transportadoras', function (Blueprint $table) {
             $table->increments('id_transportadora');
-            $table->string('nome_transportadora', 200);
+            $table->string('nome_fantasia', 200);
+            $table->string('razao_social', 600);
+            $table->string('cnpj', 13);
             $table->timestamps();
         });
     }

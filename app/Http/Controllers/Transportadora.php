@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use flexy\Http\Requests;
 use flexy\Http\Controllers\Controller;
 
+use Input;
+//use Request;
+
 class Transportadora extends Controller
 {
     /**
@@ -16,7 +19,8 @@ class Transportadora extends Controller
      */
     public function index()
     {
-        //
+        $transportadoras = \flexy\Transportadora::all();
+        return view('transportadoras/list', ['transportadoras'=>$transportadoras]);
     }
 
     /**
@@ -26,7 +30,7 @@ class Transportadora extends Controller
      */
     public function create()
     {
-        //
+        return "oi";
     }
 
     /**
@@ -37,7 +41,7 @@ class Transportadora extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('transportadoras/create');
     }
 
     /**
@@ -83,5 +87,13 @@ class Transportadora extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function consulta(Request $request)
+    {
+        if($request instanceof Request){
+          $data = $request->all();
+          print_r($data['dados_form']['cep']);die;
+        }
     }
 }
