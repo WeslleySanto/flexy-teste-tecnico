@@ -11,6 +11,7 @@
 |
 */
 
+#Rota principal que acessa a página para consulta de opções de entregas
 Route::get('/', function () {
     return view('home');
 });
@@ -21,5 +22,10 @@ Route::get('/app', function () {
 
 Route::resource('transportadoras','Transportadora@index');
 Route::resource('transportadoras-inserir','Transportadora@create');
-Route::resource('transportadoras/editar/{{$id}}','Transportadora@store');
+
+#Rotas para editar Transportadora
+Route::get('transportadoras/{id}/edit','Transportadora@edit');
+Route::put('transportadoras/{id}/update','Transportadora@update');
+
+#Rota para realizar consulta de opções de frete via post
 Route::post('/consulta','Transportadora@consulta');

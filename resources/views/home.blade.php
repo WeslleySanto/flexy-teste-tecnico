@@ -93,18 +93,6 @@
                 var mensagem = '<h4>Desculpe houve um erro inesperado ao tentar realizar sua pesquisa</h4>';
                 $("#msgError").html(mensagem);
             }
-            // success: function(response){
-            //     alert(response);
-            //     var mensagem = 'O primeiro caractere de ocorrência única é '+response;
-            //     $('#alertaSuccess').show();
-            //     $("#msgBackEnd").text(mensagem);
-            //     $('#texto').val('');
-            // },
-            // error: function(){
-            //     $('#alertaError').show();
-            //     var mensagem = 'Erro ao analisar a string';
-            //     $("#msgError").text(mensagem);
-            //}
         });
 
     });
