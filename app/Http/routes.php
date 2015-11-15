@@ -20,6 +20,6 @@ Route::get('/app', function () {
 });
 
 Route::resource('transportadoras','Transportadora@index');
-Route::resource('transportadoras/inserir','Transportadora@store');
+Route::resource('transportadoras-inserir','Transportadora@create');
 Route::resource('transportadoras/editar/{{$id}}','Transportadora@store');
 Route::post('/consulta','Transportadora@consulta');

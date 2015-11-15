@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use flexy\Http\Requests;
 use flexy\Http\Controllers\Controller;
-
+use DB;
 use Input;
 //use Request;
 
@@ -30,7 +30,7 @@ class Transportadora extends Controller
      */
     public function create()
     {
-        return "oi";
+        return view('transportadoras/create');
     }
 
     /**
@@ -92,8 +92,16 @@ class Transportadora extends Controller
     public function consulta(Request $request)
     {
         if($request instanceof Request){
-          $data = $request->all();
-          print_r($data['dados_form']['cep']);die;
+            $data = $request->all();
+            $busca = DB::select(
+                'SELECT * FROM valor_fc_fp_tps
+                INNER JOIN transportadoras ON transportadoras.id_transportadora = valor_fc_fp_tps.transportadora_id
+                INNER JOIN faixa_pesos ON faixa_pesos.id_fp = valor_fc_fp_tps.faixa_peso_id
+                INNER JOIN faixa_ceps on faixa_ceps.id_fc = valor_fc_fp_tps.faixa_cep_id
+                WHERE '.$data['dados_form']['peso'].' BETWEEN faixa_pesos.`faixa_peso_ini` AND faixa_pesos.`faixa_peso_fim`
+                AND '.$data['dados_form']['cep'].' BETWEEN `faixa_ceps`.`faixa_cep_ini` AND `faixa_ceps`.`faixa_cep_fim`'
+            );
+          return $busca;
         }
     }
 }

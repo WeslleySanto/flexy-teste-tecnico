@@ -16,6 +16,7 @@ class CreateFaixaCepsTable extends Migration
             $table->increments('id_fc');
             $table->integer('faixa_cep_ini');
             $table->integer('faixa_cep_fim');
+            $table->string('localidade_faixa_cep');
         });
     }
 

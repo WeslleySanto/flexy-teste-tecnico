@@ -1,9 +1,12 @@
 @extends('app')
 
 @section('content')
-<div class="container">
-<center><h3>Transportadoras</h3></center>
-<div class="jumbotron" style="width:80%; margin-left: 10%;">
+<div class="container" style="width:80%; margin-left: 10%;">
+<center><h3>Transportadoras</h3></center><br>
+<div>
+	<a href="{{url('/transportadoras-inserir')}}" type="button" class="btn btn-success form-control">CADASTRAR NOVA TRASPORTADORA</a>
+</div>
+<div class="jumbotron">
 
 	<table class="table table-striped table-hover ">
 	  <thead>
@@ -30,5 +33,4 @@
 
 </div>
 @endsection
-</div>
 
