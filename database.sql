@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.42)
 # Database: flexy
-# Generation Time: 2015-11-16 11:20:21 +0000
+# Generation Time: 2015-11-16 11:24:20 +0000
 # ************************************************************
 
 
@@ -19,6 +19,14 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+# Dump of database flexy
+# ------------------------------------------------------------
+
+DROP DATABASE IF EXISTS `flexy`;
+
+CREATE DATABASE `flexy`;
+
+USE flexy;
 
 # Dump of table faixa_ceps
 # ------------------------------------------------------------
@@ -103,21 +111,6 @@ VALUES
 UNLOCK TABLES;
 
 
-# Dump of table password_resets
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `password_resets`;
-
-CREATE TABLE `password_resets` (
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  KEY `password_resets_email_index` (`email`),
-  KEY `password_resets_token_index` (`token`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-
-
 # Dump of table transportadoras
 # ------------------------------------------------------------
 
@@ -147,25 +140,6 @@ VALUES
 
 /*!40000 ALTER TABLE `transportadoras` ENABLE KEYS */;
 UNLOCK TABLES;
-
-
-# Dump of table users
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `users`;
-
-CREATE TABLE `users` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
 
 
 # Dump of table valor_fc_fp_tps
