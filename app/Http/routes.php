@@ -16,16 +16,23 @@ Route::get('/', function () {
     return view('home');
 });
 
+#Rota de teste para debugar template base
 Route::get('/app', function () {
     return view('app');
 });
 
-Route::resource('transportadoras','Transportadora@index');
-Route::resource('transportadoras-inserir','Transportadora@create');
 
-#Rotas para editar Transportadora
-Route::get('transportadoras/{id}/edit','Transportadora@edit');
-Route::put('transportadoras/{id}/update','Transportadora@update');
+#Rotas para manipular os dados da entidade Transportadora
+Route::resource('transportadoras','TransportadoraController@index');
+Route::resource('transportadoras-inserir','TransportadoraController@create');
+Route::post('transportadoras/store','TransportadoraController@store');
+Route::get('transportadoras/{id}/edit','TransportadoraController@edit');
+Route::put('transportadoras/{id}/update','TransportadoraController@update');
+
+#Rotas para manipular os dados da entidade FaixaCep
+Route::resource('faixas-de-cep','FaixaCepController@index');
+Route::resource('faixas-de-cep-inserir','FaixaCepController@create');
+Route::post('cep/store','FaixaCepController@store');
 
 #Rota para realizar consulta de opções de frete via post
-Route::post('/consulta','Transportadora@consulta');
+Route::post('/consulta','TransportadoraController@consulta');

@@ -4,7 +4,7 @@
 <div class="container" style="width:80%; margin-left: 10%;">
 <center><h3>Transportadoras</h3></center><br>
 <div>
-	<a href="{{url('/transportadoras-inserir')}}" type="button" class="btn btn-success form-control">CADASTRAR NOVA TRASPORTADORA</a>
+	<a href="{{url('/transportadoras-inserir')}}" type="button" class="btn btn-success form-control">CADASTRAR NOVA TRANSPORTADORA</a>
 </div>
 <div class="jumbotron">
 

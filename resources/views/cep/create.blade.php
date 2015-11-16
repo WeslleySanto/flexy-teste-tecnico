@@ -2,25 +2,25 @@
 
 @section('content')
 <div class="jumbotron container" style="width:80%; margin-left: 10%;">
-	<center><h3>Transportadoras</h3></center>
+	<center><h3>Faixas de Cep</h3></center>
 	<div style="position: relative; height:auto;">
-		{!! Form::open(['url'=>'transportadoras/store','method'=>'post']) !!}
+		{!! Form::open(['url'=>'cep/store','method'=>'post']) !!}
 			<div class="form-group">
-		        {!! Form::label('nome_fantasia', 'Nome Fantasia:',['class' =>'col-lg-2 control-label']) !!}
+		        {!! Form::label('faixa_cep_ini', 'Inicio da faixa de cep:',['class' =>'col-lg-2 control-label']) !!}
 		      	<div class="col-lg-10">
-		        	{!! Form::text('nome_fantasia', null, ['class' => 'form-control','placeholder'=>'Ex: TNT Trasportes']) !!}
+		        	{!! Form::text('faixa_cep_ini', null, ['class' => 'form-control','placeholder'=>'Ex: 88000001']) !!}
 		      	</div>
 		    </div>
 		    <div class="form-group">
-		      	{!! Form::label('razao_social', 'Razão Social:',['class' =>'col-lg-2 control-label']) !!}
+		      	{!! Form::label('faixa_cep_fim', 'Final da faixa de cep:',['class' =>'col-lg-2 control-label']) !!}
 		      	<div class="col-lg-10">
-		        	{!! Form::text('razao_social', null, ['class' => 'form-control','placeholder'=>'Ex: TNT Trasportadora de Cargas LTDA']) !!}
+		        	{!! Form::text('faixa_cep_fim', null, ['class' => 'form-control','placeholder'=>'Ex: 88099999']) !!}
 		      	</div>
 		    </div>
 			<div class="form-group">
-		      	{!! Form::label('cnpj', 'CNPJ:',['class' =>'col-lg-2 control-label']) !!}
+		      	{!! Form::label('localidade_faixa_cep', 'Localidade:',['class' =>'col-lg-2 control-label']) !!}
 		      	<div class="col-lg-10">
-		        	{!! Form::text('cnpj', null, ['class' => 'form-control','placeholder'=>'Ex: 01.139.453/0001-40']) !!}
+		        	{!! Form::text('localidade_faixa_cep', null, ['class' => 'form-control','placeholder'=>'Ex: Florianópolis']) !!}
 		      	</div>
 		    </div>
 		    <div class="form-group">

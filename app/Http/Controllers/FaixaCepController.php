@@ -6,11 +6,12 @@ use Illuminate\Http\Request;
 
 use flexy\Http\Requests;
 use flexy\Http\Controllers\Controller;
-use DB;
+use flexy\Http\Requests\FaixaCepRequest;
+use flexy\FaixaCep;
 use Input;
-//use Request;
+use DB;
 
-class Transportadora extends Controller
+class FaixaCepController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,9 +20,8 @@ class Transportadora extends Controller
      */
     public function index()
     {
-        $transportadoras = \flexy\Transportadora::all();
-        return view('transportadoras/list', ['transportadoras'=>$transportadoras]);
-    }
+        $faixaCeps = \flexy\FaixaCep::all();
+        return view('cep/list', ['faixaCeps'=>$faixaCeps]);    }
 
     /**
      * Show the form for creating a new resource.
@@ -30,8 +30,7 @@ class Transportadora extends Controller
      */
     public function create()
     {
-        return view('transportadoras/create');
-    }
+        return view('cep/create');    }
 
     /**
      * Store a newly created resource in storage.
@@ -39,10 +38,13 @@ class Transportadora extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FaixaCepRequest $request)
     {
-        return view('transportadoras/create');
-    }
+        $data = $request->all();
+        //echo "<pre>";
+        //print_r($data);die;
+        FaixaCep::create($data);
+        return redirect('faixas-de-cep');    }
 
     /**
      * Display the specified resource.
@@ -87,21 +89,5 @@ class Transportadora extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function consulta(Request $request)
-    {
-        if($request instanceof Request){
-            $data = $request->all();
-            $busca = DB::select(
-                'SELECT * FROM valor_fc_fp_tps
-                INNER JOIN transportadoras ON transportadoras.id_transportadora = valor_fc_fp_tps.transportadora_id
-                INNER JOIN faixa_pesos ON faixa_pesos.id_fp = valor_fc_fp_tps.faixa_peso_id
-                INNER JOIN faixa_ceps on faixa_ceps.id_fc = valor_fc_fp_tps.faixa_cep_id
-                WHERE '.$data['dados_form']['peso'].' BETWEEN faixa_pesos.`faixa_peso_ini` AND faixa_pesos.`faixa_peso_fim`
-                AND '.$data['dados_form']['cep'].' BETWEEN `faixa_ceps`.`faixa_cep_ini` AND `faixa_ceps`.`faixa_cep_fim`'
-            );
-          return $busca;
-        }
     }
 }

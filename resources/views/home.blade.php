@@ -77,8 +77,8 @@
                     jQuery.each(arrayElementos , function(index, value){
                         saida += "<tr>";
                         saida += '<td>'+value.cnpj+'</td>';
-                        saida += '<td> R$ '+value.nome_fantasia+'</td>';
-                        saida += '<td>'+value.valor+'</td>';
+                        saida += '<td>'+value.nome_fantasia+'</td>';
+                        saida += '<td>R$ '+value.valor+'</td>';
                         saida += '<td>'+value.localidade_faixa_cep+'</td>';
                         saida += '<td>De '+value.faixa_peso_ini+' Kg à '+value.faixa_peso_fim+' Kg</td>';
                         saida += "</tr>";

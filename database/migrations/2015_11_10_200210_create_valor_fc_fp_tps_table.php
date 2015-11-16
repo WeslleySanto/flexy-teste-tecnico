@@ -21,6 +21,7 @@ class CreateValorFcFpTpsTable extends Migration
             $table->foreign('transportadora_id')->references('id_transportadora')->on('transportadoras')->onDelete('cascade');
             $table->integer('faixa_peso_id')->unsigned();
             $table->foreign('faixa_peso_id')->references('id_fp')->on('faixa_pesos')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

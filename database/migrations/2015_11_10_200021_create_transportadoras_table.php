@@ -17,6 +17,7 @@ class CreateTransportadorasTable extends Migration
             $table->string('nome_fantasia', 200);
             $table->string('razao_social', 600);
             $table->string('cnpj', 13);
+            $table->integer('status_transportadora',1);
             $table->timestamps();
         });
     }

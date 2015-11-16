@@ -16,6 +16,7 @@ class CreateFaixaPesosTable extends Migration
             $table->increments('id_fp');
             $table->unsignedInteger('faixa_peso_ini');
             $table->unsignedInteger('faixa_peso_fim');
+            $table->timestamps();
         });
     }
 
