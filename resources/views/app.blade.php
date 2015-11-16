@@ -52,6 +52,7 @@
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="{{url('/faixas-de-cep')}}">Faixas de Cep</a></li>
 							<li><a href="{{url('/faixas-de-peso')}}">Faixas de Peso</a></li>
+							<li><a href="{{url('/opcoes-de-frete')}}">Opções de Frete</a></li>
 						</ul>
 					</li>
 				</ul>

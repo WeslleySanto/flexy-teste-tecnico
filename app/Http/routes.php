@@ -39,5 +39,9 @@ Route::resource('faixas-de-peso','FaixaPesoController@index');
 Route::resource('faixas-de-peso-inserir','FaixaPesoController@create');
 Route::post('peso/store','FaixaPesoController@store');
 
+#Rotas para manipular os dados da entidade ValorFcFpTp
+Route::resource('opcoes-de-frete','ValorFcFpTpController@index');
+Route::resource('faixas-de-peso-inserir','ValorFcFpTpController@create');
+
 #Rota para realizar consulta de opções de frete via post
 Route::post('/consulta','TransportadoraController@consulta');
