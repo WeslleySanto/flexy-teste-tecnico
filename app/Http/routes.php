@@ -31,8 +31,13 @@ Route::put('transportadoras/{id}/update','TransportadoraController@update');
 
 #Rotas para manipular os dados da entidade FaixaCep
 Route::resource('faixas-de-cep','FaixaCepController@index');
-Route::resource('faixas-de-cep-inserir','FaixaCepController@create');
+Route::resource('faixas-de-cep-inserir','FaixaPesoController@create');
 Route::post('cep/store','FaixaCepController@store');
+
+#Rotas para manipular os dados da entidade Peso
+Route::resource('faixas-de-peso','FaixaPesoController@index');
+Route::resource('faixas-de-peso-inserir','FaixaPesoController@create');
+Route::post('peso/store','FaixaPesoController@store');
 
 #Rota para realizar consulta de opções de frete via post
 Route::post('/consulta','TransportadoraController@consulta');

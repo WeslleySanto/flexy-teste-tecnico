@@ -6,12 +6,11 @@ use Illuminate\Http\Request;
 
 use flexy\Http\Requests;
 use flexy\Http\Controllers\Controller;
-use flexy\Http\Requests\FaixaCepRequest;
-use flexy\FaixaCep;
+use flexy\Http\Requests\FaixaPesoRequest;
+use flexy\FaixaPeso;
 use Input;
-use DB;
 
-class FaixaCepController extends Controller
+class FaixaPesoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +19,9 @@ class FaixaCepController extends Controller
      */
     public function index()
     {
-        $faixaCeps = \flexy\FaixaCep::all();
-        return view('cep/list', ['faixaCeps'=>$faixaCeps]);    }
+        $faixaPesos = \flexy\FaixaPeso::all();
+        return view('peso/list', ['faixaPesos'=>$faixaPesos]);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -30,7 +30,7 @@ class FaixaCepController extends Controller
      */
     public function create()
     {
-        return view('cep/create');
+        return view('peso/create');
     }
 
     /**
@@ -39,13 +39,13 @@ class FaixaCepController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(FaixaCepRequest $request)
+    public function store(FaixaPesoRequest $request)
     {
         $data = $request->all();
         //echo "<pre>";
         //print_r($data);die;
-        FaixaCep::create($data);
-        return redirect('faixas-de-cep');
+        FaixaPeso::create($data);
+        return redirect('faixas-de-peso');
     }
 
     /**
