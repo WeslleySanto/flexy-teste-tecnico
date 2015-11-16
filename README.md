@@ -22,6 +22,6 @@ http://localhost:8000/
 no banco de dados já há algumas faixas de cep cadastradas, e duas transportadoras de teste e as faixas de peso, já com os devidos relacionamentos.
 
 #Importante:
-Não foi implementado ainda um tratamento dos inputs na tela de consultar opções de frete (home), então insira o cep sem nenhum caracter de separação ex: 88099001 e o peso do produto a ser entregue utilize a unidade de Kilos separado da unidade de gramas pelo caracter ponto, pois é assim que está persistido as faixas no banco de dados ex: 2.500 
+Não foi implementado ainda um tratamento dos inputs na tela de consultar opções de frete (home), então insira o cep sem nenhum caracter de separação ex: 88099001 e o peso do produto a ser entregue utilize a unidade de Kilos separado da unidade de gramas pelo caracter ponto, pois é assim que está persistido as faixas no banco de dados ex: 2.500
 
 caso contrário o sistema não conseguirá realizar a consulta e apenas retornará uma validação de erro.
