@@ -23,7 +23,7 @@
 			      <td>{{ $k+1 }}</td>
 			      <td>De {{ $faixaPeso->faixa_peso_ini }} Kg</td>
 			      <td>à {{ $faixaPeso->faixa_peso_fim }} Kg</td>
-			      <td><a href="{{ url('faixa-de-cep'). $faixaPeso->id_fp }}">Editar</a> | <a href="{{ $faixaPeso->id_fp }}">Excluir</a></td>
+			      <td><a class="btn-sm btn-success" href="{{ url('faixa-de-cep'). $faixaPeso->id_fp }}">Editar</a> | <a class="btn-sm btn-danger" href="{{ $faixaPeso->id_fp }}">Excluir</a></td>
 			    </tr>
 	    @endforeach
 	  </tbody>

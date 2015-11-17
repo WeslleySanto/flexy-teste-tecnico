@@ -44,8 +44,6 @@ class TransportadoraController extends Controller
     {
         if($request instanceof TransportadoraRequest){
             $data = $request->all();
-            //echo "<pre>";
-            //print_r($data);die;
             Transportadora::create($data);
             return redirect('transportadoras');
         }
@@ -106,7 +104,7 @@ class TransportadoraController extends Controller
                 INNER JOIN faixa_pesos ON faixa_pesos.id_fp = valor_fc_fp_tps.faixa_peso_id
                 INNER JOIN faixa_ceps on faixa_ceps.id_fc = valor_fc_fp_tps.faixa_cep_id
                 WHERE '.$data['dados_form']['peso'].' BETWEEN faixa_pesos.`faixa_peso_ini` AND faixa_pesos.`faixa_peso_fim`
-                AND '.$data['dados_form']['cep'].' BETWEEN `faixa_ceps`.`faixa_cep_ini` AND `faixa_ceps`.`faixa_cep_fim`'
+                AND '.$data['dados_form']['cep'].' BETWEEN `faixa_ceps`.`faixa_cep_ini` AND `faixa_ceps`.`faixa_cep_fim` ORDER BY `valor_fc_fp_tps`.`valor`'
             );
           return $busca;
         }

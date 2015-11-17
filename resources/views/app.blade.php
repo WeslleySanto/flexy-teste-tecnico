@@ -44,6 +44,7 @@
  				<ul class="nav navbar-nav">
  					<li><a href="{{url('/')}}">Home</a></li>
  					<li><a href="{{url('/transportadoras')}}">Transportadoras</a></li>
+ 					<li><a href="{{url('/opcoes-de-frete')}}">Ofertas de Frete</a></li>
  				</ul>
 
  				<ul class="nav navbar-nav navbar-right">
@@ -52,7 +53,6 @@
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="{{url('/faixas-de-cep')}}">Faixas de Cep</a></li>
 							<li><a href="{{url('/faixas-de-peso')}}">Faixas de Peso</a></li>
-							<li><a href="{{url('/opcoes-de-frete')}}">Opções de Frete</a></li>
 						</ul>
 					</li>
 				</ul>

@@ -25,7 +25,7 @@
 			      <td>{{ $faixaCep->faixa_cep_ini }}</td>
 			      <td>{{ $faixaCep->faixa_cep_fim }}</td>
 			      <td>{{ $faixaCep->localidade_faixa_cep }}</td>
-			      <td><a href="{{ url('faixa-de-cep'). $faixaCep->id_fc }}">Editar</a> | <a href="{{ $faixaCep->id_fc }}">Excluir</a></td>
+			      <td><a class="btn-sm btn-success" href="{{ url('faixa-de-cep'). $faixaCep->id_fc }}">Editar</a> | <a class="btn-sm btn-danger" href="{{ $faixaCep->id_fc }}">Excluir</a></td>
 			    </tr>
 	    @endforeach
 	  </tbody>

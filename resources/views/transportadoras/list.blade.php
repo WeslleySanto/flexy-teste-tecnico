@@ -26,9 +26,9 @@
 			      <td>{{ $transportadora->razao_social }}</td>
 			      <td>{{ $transportadora->cnpj }}</td>
 		  		@if($transportadora->status_transportadora == 1)
-			      <td><a href="{{ url('transportadoras-editar'). $transportadora->id_transportadora }}">Editar</a> | <a href="{{ $transportadora->id_transportadora }}">Excluir</a> | <a href="{{ $transportadora->id_transportadora }}">Inativar</a></td>
+			      <td><a class="btn-sm btn-success" href="{{ url('transportadoras-editar'). $transportadora->id_transportadora }}">Editar</a> | <a class="btn-sm btn-danger" href="{{ $transportadora->id_transportadora }}">Excluir</a> | <a class="btn-sm btn-default" href="{{ $transportadora->id_transportadora }}">Inativar</a></td>
 		  		@elseif($transportadora->status_transportadora == 0)
-			      <td><a href="{{ url('transportadoras-editar'). $transportadora->id_transportadora}}">Editar</a> | <a href="{{ $transportadora->id_transportadora }}">Excluir</a> | <a href="{{ $transportadora->id_transportadora }}">Ativar</a></td>
+			      <td><a class="btn-sm btn-success" href="{{ url('transportadoras-editar'). $transportadora->id_transportadora}}">Editar</a> | <a class="btn-sm btn-danger" href="{{ $transportadora->id_transportadora }}">Excluir</a> | <a class="btn-sm btn-info" href="{{ $transportadora->id_transportadora }}">Ativar</a></td>
 				@else
 				@endif
 			    </tr>
