@@ -10,7 +10,7 @@ Intruções para testar aplicação:
 4. crie um banco de dados com o nome flexy
 5. Execute o dump do arquivo database.sql que se encontra na pasta raiz do projeto, ele deverá criar e já selecionar para uso o banco de dados denomidado flexy.
 6. No arquivo .env que se encontra na raiz da pasta do projeto edite a senha o usuário e o host do banco de dados para as credenciais do mysql da máquina onde o teste está sendo realizado.
-7. Uma vez que o DB estiver configurado rode o seguinte comando:
+7. Uma vez que o DB estiver configurado rode dentro da pasta raiz do projeto, o seguinte comando:
 
 ```php
 php artisan serve
